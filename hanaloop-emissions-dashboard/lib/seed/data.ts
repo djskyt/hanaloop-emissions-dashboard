@@ -1,0 +1,111 @@
+import type { Company, Country, Post } from "./types";
+
+export const countries: Country[] = [
+  { code: "US", name: "United States" },
+  { code: "DE", name: "Germany" },
+  { code: "KR", name: "South Korea" },
+  { code: "JP", name: "Japan" },
+];
+
+export const companies: Company[] = [
+  {
+    id: "c1",
+    name: "Acme Corp",
+    country: "US",
+    emissions: [
+      { yearMonth: "2024-01", source: "gasoline",    emissions: 80  },
+      { yearMonth: "2024-01", source: "electricity", emissions: 40  },
+      { yearMonth: "2024-02", source: "gasoline",    emissions: 70  },
+      { yearMonth: "2024-02", source: "electricity", emissions: 40  },
+      { yearMonth: "2024-03", source: "gasoline",    emissions: 55  },
+      { yearMonth: "2024-03", source: "electricity", emissions: 40  },
+      { yearMonth: "2024-04", source: "gasoline",    emissions: 60  },
+      { yearMonth: "2024-04", source: "electricity", emissions: 35  },
+      { yearMonth: "2024-05", source: "diesel",      emissions: 50  },
+      { yearMonth: "2024-05", source: "electricity", emissions: 38  },
+      { yearMonth: "2024-06", source: "diesel",      emissions: 45  },
+      { yearMonth: "2024-06", source: "electricity", emissions: 32  },
+    ],
+  },
+  {
+    id: "c2",
+    name: "Globex",
+    country: "DE",
+    emissions: [
+      { yearMonth: "2024-01", source: "natural_gas", emissions: 50  },
+      { yearMonth: "2024-01", source: "electricity", emissions: 30  },
+      { yearMonth: "2024-02", source: "natural_gas", emissions: 65  },
+      { yearMonth: "2024-02", source: "electricity", emissions: 40  },
+      { yearMonth: "2024-03", source: "natural_gas", emissions: 70  },
+      { yearMonth: "2024-03", source: "electricity", emissions: 50  },
+      { yearMonth: "2024-04", source: "coal",        emissions: 80  },
+      { yearMonth: "2024-04", source: "electricity", emissions: 45  },
+      { yearMonth: "2024-05", source: "coal",        emissions: 75  },
+      { yearMonth: "2024-05", source: "electricity", emissions: 42  },
+      { yearMonth: "2024-06", source: "coal",        emissions: 68  },
+      { yearMonth: "2024-06", source: "electricity", emissions: 38  },
+    ],
+  },
+  {
+    id: "c3",
+    name: "KoreTech",
+    country: "KR",
+    emissions: [
+      { yearMonth: "2024-01", source: "lpg",         emissions: 35  },
+      { yearMonth: "2024-01", source: "electricity", emissions: 60  },
+      { yearMonth: "2024-02", source: "lpg",         emissions: 30  },
+      { yearMonth: "2024-02", source: "electricity", emissions: 58  },
+      { yearMonth: "2024-03", source: "diesel",      emissions: 40  },
+      { yearMonth: "2024-03", source: "electricity", emissions: 55  },
+      { yearMonth: "2024-04", source: "diesel",      emissions: 45  },
+      { yearMonth: "2024-04", source: "electricity", emissions: 52  },
+      { yearMonth: "2024-05", source: "gasoline",    emissions: 38  },
+      { yearMonth: "2024-05", source: "electricity", emissions: 50  },
+      { yearMonth: "2024-06", source: "gasoline",    emissions: 33  },
+      { yearMonth: "2024-06", source: "electricity", emissions: 48  },
+    ],
+  },
+  {
+    id: "c4",
+    name: "NipponWorks",
+    country: "JP",
+    emissions: [
+      { yearMonth: "2024-01", source: "coal",        emissions: 100 },
+      { yearMonth: "2024-01", source: "electricity", emissions: 55  },
+      { yearMonth: "2024-02", source: "coal",        emissions: 95  },
+      { yearMonth: "2024-02", source: "electricity", emissions: 50  },
+      { yearMonth: "2024-03", source: "natural_gas", emissions: 85  },
+      { yearMonth: "2024-03", source: "electricity", emissions: 48  },
+      { yearMonth: "2024-04", source: "natural_gas", emissions: 78  },
+      { yearMonth: "2024-04", source: "electricity", emissions: 44  },
+      { yearMonth: "2024-05", source: "diesel",      emissions: 70  },
+      { yearMonth: "2024-05", source: "electricity", emissions: 40  },
+      { yearMonth: "2024-06", source: "diesel",      emissions: 65  },
+      { yearMonth: "2024-06", source: "electricity", emissions: 38  },
+    ],
+  },
+];
+
+export const posts: Post[] = [
+  {
+    id: "p1",
+    title: "Q1 Sustainability Report",
+    resourceUid: "c1",
+    dateTime: "2024-03",
+    content: "Acme Corp reduced gasoline emissions by 31% in Q1 through fleet electrification.",
+  },
+  {
+    id: "p2",
+    title: "Coal Phase-out Notice",
+    resourceUid: "c2",
+    dateTime: "2024-04",
+    content: "Globex begins transition from natural gas to coal blend. Emissions expected to peak in Q2.",
+  },
+  {
+    id: "p3",
+    title: "Electricity Grid Improvement",
+    resourceUid: "c3",
+    dateTime: "2024-01",
+    content: "KoreTech switched to renewable energy grid in January, reducing electricity emissions steadily.",
+  },
+];
