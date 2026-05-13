@@ -11,10 +11,10 @@ type NavItem = {
 };
 
 const NAV_ITEMS: NavItem[] = [
+  { href: "/guide",      icon: "◎", label: "탄소 회계 가이드" },
   { href: "/dashboard",  icon: "▦", label: "대시보드"  },
   { href: "/companies",  icon: "⬡", label: "회사 목록" },
   { href: "/posts",      icon: "☰", label: "포스트"    },
-  { href: "/guide",      icon: "◎", label: "탄소 회계 가이드" },
 ];
 
 export function NavDrawer() {
