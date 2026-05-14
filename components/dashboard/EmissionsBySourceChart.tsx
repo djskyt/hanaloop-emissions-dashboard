@@ -15,7 +15,17 @@ type Props = {
   companies: Company[];
 };
 
-const CustomTooltip = ({ active, payload }: any) => {
+type TooltipPayloadItem = {
+  name: string;
+  value: number;
+};
+
+type CustomTooltipProps = {
+  active?: boolean;
+  payload?: TooltipPayloadItem[];
+};
+
+const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
   if (!active || !payload?.length) return null;
   const { name, value } = payload[0];
   return (

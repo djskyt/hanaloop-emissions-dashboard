@@ -16,6 +16,18 @@ type Props = {
   companies: Company[];
 };
 
+type TooltipPayloadItem = {
+  name: string;
+  value: number;
+  color: string;
+};
+
+type CustomTooltipProps = {
+  active?: boolean;
+  payload?: TooltipPayloadItem[];
+  label?: string;
+};
+
 // 회사별 월간 배출량 합산 데이터로 변환
 function buildChartData(companies: Company[]) {
   const monthMap = new Map<string, Record<string, number>>();
@@ -37,21 +49,21 @@ function buildChartData(companies: Company[]) {
 
 const LINE_COLORS = ["#10b981", "#3b82f6", "#f59e0b", "#a855f7"];
 
-const CustomTooltip = ({ active, payload, label }: any) => {
+const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
   if (!active || !payload?.length) return null;
   return (
     <div className="rounded-lg border border-[var(--border)] bg-[var(--bg-elevated)] p-3 text-xs space-y-1 shadow-xl">
       <p className="text-[var(--text-muted)] mb-2">{label}</p>
-      {payload.map((p: any) => (
+      {payload.map((p) => (
         <div key={p.name} className="flex items-center justify-between gap-6">
           <div className="flex items-center gap-1.5">
-            <span
-              className="w-2 h-2 rounded-full"
-              style={{ backgroundColor: p.color }}
-            />
+            <span className="w-2 h-2 rounded-full" style={{ backgroundColor: p.color }} />
             <span className="text-[var(--text-secondary)]">{p.name}</span>
           </div>
-          <span className="text-[var(--text-primary)] font-medium" style={{ fontFamily: "'DM Mono', monospace" }}>
+          <span
+            className="text-[var(--text-primary)] font-medium"
+            style={{ fontFamily: "'DM Mono', monospace" }}
+          >
             {p.value.toFixed(1)} tCO₂e
           </span>
         </div>

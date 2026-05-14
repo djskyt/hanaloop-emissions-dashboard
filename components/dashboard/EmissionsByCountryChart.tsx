@@ -17,7 +17,17 @@ type Props = {
   companies: Company[];
 };
 
-const CustomTooltip = ({ active, payload, label }: any) => {
+type TooltipPayloadItem = {
+  value: number;
+};
+
+type CustomTooltipProps = {
+  active?: boolean;
+  payload?: TooltipPayloadItem[];
+  label?: string;
+};
+
+const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
   if (!active || !payload?.length) return null;
   return (
     <div className="rounded-lg border border-[var(--border)] bg-[var(--bg-elevated)] p-3 text-xs shadow-xl">
