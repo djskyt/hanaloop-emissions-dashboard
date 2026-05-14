@@ -1,29 +1,14 @@
-"use client";
+import { CardSkeleton } from "@/components/ui/Skeleton";
 
-import { useEffect } from "react";
-
-type Props = {
-  error: Error & { digest?: string };
-  reset: () => void;
-};
-
-export default function CompaniesError({ error, reset }: Props) {
-  useEffect(() => {
-    console.error(error);
-  }, [error]);
-
+export default function CompaniesLoading() {
   return (
-    <div className="p-8 flex flex-col items-center justify-center min-h-[400px] space-y-4">
-      <p className="text-[var(--danger)] text-lg font-semibold">
-        회사 목록을 불러오지 못했습니다
-      </p>
-      <p className="text-sm text-[var(--text-muted)]">{error.message}</p>
-      <button
-        onClick={reset}
-        className="px-4 py-2 rounded-lg bg-[var(--accent-glow)] text-[var(--accent)] border border-[var(--accent-dim)] text-sm hover:opacity-80 transition-opacity"
-      >
-        다시 시도
-      </button>
+    <div className="p-8 space-y-8">
+      <div className="h-8 w-48 bg-[var(--bg-elevated)] rounded animate-pulse" />
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
+        {Array.from({ length: 4 }).map((_, i) => (
+          <CardSkeleton key={i} />
+        ))}
+      </div>
     </div>
   );
 }
